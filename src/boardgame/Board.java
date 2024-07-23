@@ -2,16 +2,21 @@ package boardgame;
 
 public class Board {
 
+    // linhas e colunas do tabuleiro
     private int rows;
     private int columns;
+
+    // associação com Piece
     private Piece[][] pieces;
 
+    // Programação defensiva
     public Board(int rows, int columns) {
         if (rows < 1 || columns < 1) {
             throw new BoardException("Error creating board: there must be at least 1 row and 1 column");
         }
         this.rows = rows;
         this.columns = columns;
+        // instanciou um novo tabuleiro
         pieces = new Piece[rows][columns];
     }
 
